@@ -49,22 +49,20 @@ class MovieAdapter(private val items: ArrayList<MovieDataModel>): RecyclerView.A
     override fun getHeaderPositionForItem(itemPosition: Int): Int {
 
         //todo this method always returns 0 no matter what position, needs fixing
-        println("Position = ${itemPosition}")
 
-        var  itemPosition:Int = 0
-        run { var headerPosition = 0
+        var  itemPosition1 = itemPosition
+        var  headerPosition = 0
             do
             {
-                if (this.isHeader(itemPosition))
-                {
-                    headerPosition = itemPosition
+                if (this.isHeader(itemPosition1)) {
+                    headerPosition = itemPosition1
                     break
                 }
-                itemPosition -= 1
+                itemPosition1 -= 1
             }
-            while (itemPosition >= 0)
-            println("Position11 = ${headerPosition}")
-            return headerPosition }
+            while (itemPosition1 >= 0)
+
+            return headerPosition
 
     }
 

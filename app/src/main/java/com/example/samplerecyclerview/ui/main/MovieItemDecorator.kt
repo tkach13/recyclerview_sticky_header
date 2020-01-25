@@ -16,6 +16,7 @@ class MovieItemDecorator(@NonNull listener: StickyHeaderInterface) : RecyclerVie
         super.onDrawOver(c, parent, state)
         val topChild = parent.getChildAt(0) ?: return
         val topChildPosition = parent.getChildAdapterPosition(topChild)
+        println("topChildPosition = ${topChildPosition}")
 
         if (topChildPosition == RecyclerView.NO_POSITION) {
             return
@@ -53,6 +54,7 @@ class MovieItemDecorator(@NonNull listener: StickyHeaderInterface) : RecyclerVie
         var childInContact:View? = null
 
         for (i in 0 until parent.childCount){
+            println("parentCount = ${parent.childCount}")
             var heightTolerance:Int = 0
             var child = parent.getChildAt(i)
 
