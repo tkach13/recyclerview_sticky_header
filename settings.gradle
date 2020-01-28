@@ -1,2 +1,2 @@
-include ':app', ':redivivus'
+include ':app', ':redi_adapter'
 rootProject.name='sample RecyclerView'

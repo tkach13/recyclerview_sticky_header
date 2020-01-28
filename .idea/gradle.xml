@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/white_widow" />
+            <option value="$PROJECT_DIR$/redi_adapter" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
