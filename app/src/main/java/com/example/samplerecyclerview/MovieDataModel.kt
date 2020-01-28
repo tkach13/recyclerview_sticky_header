@@ -24,7 +24,6 @@ data class MovieDataModel (
         }
 
 
-
         fun generateNewList(array:ArrayList<MovieDataModel>):ArrayList<MovieDataModel>{
 
              val newArray  = ArrayList<MovieDataModel>()
@@ -63,6 +62,8 @@ data class MovieDataModel (
             )
         }
     }
+
+
 }
 
 enum class MovieDataType {

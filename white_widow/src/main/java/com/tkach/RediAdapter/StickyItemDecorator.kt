@@ -1,4 +1,5 @@
-package com.example.samplerecyclerview.ui.main
+package com.tkach.RediAdapter
+
 
 import android.graphics.Canvas
 import android.view.LayoutInflater
@@ -7,10 +8,10 @@ import android.view.ViewGroup
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 
-class MovieItemDecorator(@NonNull listener: StickyHeaderInterface) : RecyclerView.ItemDecoration() {
+class StickyItemDecorator(@NonNull listener: StickyHeaderInterface) : RecyclerView.ItemDecoration() {
 
     private var mStickyHeaderHeight:Int = 0
-     private var mlistener:StickyHeaderInterface = listener
+    private var mlistener:StickyHeaderInterface = listener
 
     override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         super.onDrawOver(c, parent, state)
@@ -77,7 +78,7 @@ class MovieItemDecorator(@NonNull listener: StickyHeaderInterface) : RecyclerVie
             }
 
         }
-    return childInContact!!
+        return childInContact!!
     }
 
     private fun fixLayoutSize(parent: RecyclerView, view: View) {
@@ -106,7 +107,6 @@ class MovieItemDecorator(@NonNull listener: StickyHeaderInterface) : RecyclerVie
 
 
     interface StickyHeaderInterface {
-
 
         fun getHeaderPositionForItem(itemPosition:Int):Int
 

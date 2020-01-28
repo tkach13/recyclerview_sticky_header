@@ -1,6 +1,5 @@
 package com.example.samplerecyclerview.ui.main
 
-import android.graphics.Movie
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +9,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.samplerecyclerview.MovieDataModel
 import com.example.samplerecyclerview.R
+import com.tkach.RediAdapter.Adapter
+import com.tkach.RediAdapter.StickyItemDecorator
+import com.tkach.RediAdapter.models.ItemDrawer
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
@@ -20,9 +22,8 @@ class MainFragment : Fragment() {
 
     private lateinit var viewModel: MainViewModel
 
-
     private val viewManager = LinearLayoutManager(context)
-    private val recyclerAdapter = MovieAdapter(MovieDataModel.generateNewList(MovieDataModel.createList()))
+    private val recyclerAdapter = Adapter()
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -35,11 +36,30 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
 
-        recyclerView.apply {
-            layoutManager = viewManager
-            adapter = recyclerAdapter
-            addItemDecoration(MovieItemDecorator(recyclerAdapter))
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val drawers=MovieDataModel.createList().groupBy {
+            it.date
         }
+        val newArrayList= ArrayList<ItemDrawer>()
+        drawers.forEach {
+            newArrayList.add(HeaderDrawer(getYear(it.key)))
+            newArrayList.addAll(it.value.map {movieData->
+                DataDrawer(movieData)
+            })
+        }
+
+        recyclerAdapter.updateList(newArrayList)
+
+        recyclerView.apply {
+            adapter = recyclerAdapter
+            layoutManager = viewManager
+            addItemDecoration(StickyItemDecorator(recyclerAdapter))
+        }
+
 
     }
 
