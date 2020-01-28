@@ -1,2 +1,2 @@
-include ':app', ':redi_adapter'
-rootProject.name='sample RecyclerView'
+include ':app', ':ready_adapter'
+rootProject.name='Ready adapter'
