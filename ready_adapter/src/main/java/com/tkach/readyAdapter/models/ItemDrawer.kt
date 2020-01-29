@@ -1,4 +1,4 @@
-package com.tkach.RediAdapter.models
+package com.tkach.readyAdapter.models
 
 import android.view.View
 import androidx.annotation.LayoutRes

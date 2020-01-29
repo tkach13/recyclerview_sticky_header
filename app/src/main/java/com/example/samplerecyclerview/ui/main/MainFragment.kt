@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.samplerecyclerview.MovieDataModel
 import com.example.samplerecyclerview.R
-import com.tkach.RediAdapter.Adapter
-import com.tkach.RediAdapter.StickyItemDecorator
-import com.tkach.RediAdapter.models.ItemDrawer
+import com.tkach.readyAdapter.Adapter
+import com.tkach.readyAdapter.StickyItemDecorator
+import com.tkach.readyAdapter.models.ItemDrawer
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
@@ -41,7 +41,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val drawers=MovieDataModel.createList().groupBy {
+        val drawers= MovieDataModel.createList().groupBy {
             it.date
         }
         val newArrayList= ArrayList<ItemDrawer>()

@@ -1,4 +1,4 @@
-package com.tkach.RediAdapter
+package com.tkach.readyAdapter
 
 
 import android.graphics.Canvas
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class StickyItemDecorator(@NonNull listener: StickyHeaderInterface) : RecyclerView.ItemDecoration() {
 
     private var mStickyHeaderHeight:Int = 0
-    private var mlistener:StickyHeaderInterface = listener
+    private var mlistener: StickyHeaderInterface = listener
 
     override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         super.onDrawOver(c, parent, state)

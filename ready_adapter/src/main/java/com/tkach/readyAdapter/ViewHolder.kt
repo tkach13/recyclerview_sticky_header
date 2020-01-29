@@ -1,4 +1,4 @@
-package com.tkach.RediAdapter
+package com.tkach.readyAdapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

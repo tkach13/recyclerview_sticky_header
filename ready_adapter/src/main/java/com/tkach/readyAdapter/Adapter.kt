@@ -1,11 +1,11 @@
-package com.tkach.RediAdapter
+package com.tkach.readyAdapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
-import com.tkach.RediAdapter.models.ItemDrawer
+import com.tkach.readyAdapter.models.ItemDrawer
 
 
 class Adapter : RecyclerView.Adapter<ViewHolder>(), StickyItemDecorator.StickyHeaderInterface {
